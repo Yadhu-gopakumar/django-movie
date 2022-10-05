@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action="" method="post">
+    {% csrf_token %}
+    <h2> Are you sure want to delete movie :<span style="color: orange;"> '{{data.name}}'</span> ? </h2>
+
+    <div class="d-flex align-items-center" style="width: fit-content;">
+
+        <a href="{% url 'movieApp:edit' data.id %}">
+            <button type="submit" style="text-align:center;width: 100px;font-family: monospace; margin: 30px 15px;"
+                class="btn-success btn">Delete</button>
+        </a>
+
+    </div>
+
+</form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="card_row ">
+    {% for i in m %}
+    <div class="card_container my-2">
+        <img src="{{i.img.url}}" >
+        <div class="title">
+            {{i.name}}
+        </div>
+        <a href="{% url 'movieApp:details' i.id%}" ><button class="btn-warning btnw">Details</button></a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

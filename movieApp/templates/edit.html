@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+
+<form style="margin-top:130px;display: grid;place-items: center;" action="" method="post" enctype="multipart/form-data">
+    <h4>Update details: <br><span style="color:orange">{{data.name}}</span></h4>
+    <hr style="width:50vw">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn-warning" style="width: 200px; ">Update</button>
+</form>
+
+{% endblock %}

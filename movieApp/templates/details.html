@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="details_container"  style="width: 90vw;">
+        <div class="top" style="width: 100%;">
+
+            <div class="left">
+                <img src="{{data.img.url}}" alt="">
+            </div>
+
+            <div class="right" style="margin-right:30px;text-align: start;">
+                <h2>{{data.name}}</h2>
+                <p>{{data.year}}</p>
+                <hr style="width: 40vw;">
+                <p>{{data.desc}}</p>
+            </div>
+           
+        </div>
+        <div class="bottom" style="width: 100vw;display: grid;place-items: center;">
+            <a href="{% url 'movieApp:edit' data.id %}" > <button style="text-align:center;width: 250px;font-family: monospace; margin: 30px 15px;" class="btn-success btn">edit</button> </a>
+            <a href="{% url 'movieApp:delete' data.id %}"> <button class="btn-danger btn" style="text-align:center;width: 250px;font-family: monospace;" >delete</button> </a>
+
+        </div>
+</div>
+{% endblock %}
